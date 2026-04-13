@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["IBM Plex Mono", "monospace"],
+        mono: ["IBM Plex Mono", "monospace"],
+        pixel: ["VT323", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,10 +52,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        cyber: {
-          glow: "hsl(var(--cyber-glow))",
-          green: "hsl(var(--cyber-green))",
-          dim: "hsl(var(--cyber-dim))",
+        win: {
+          titlebar: "hsl(var(--win-titlebar))",
+          "titlebar-text": "hsl(var(--win-titlebar-text))",
+          bg: "hsl(var(--win-bg))",
+          menubar: "hsl(var(--win-menubar))",
+          button: "hsl(var(--win-button))",
+          highlight: "hsl(var(--win-highlight))",
+          scrollbar: "hsl(var(--win-scrollbar))",
+          desktop: "hsl(var(--desktop))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -69,8 +75,8 @@ export default {
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "calc(var(--radius))",
+        sm: "calc(var(--radius))",
       },
       keyframes: {
         "accordion-down": {
