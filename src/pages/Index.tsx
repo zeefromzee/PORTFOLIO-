@@ -1,23 +1,31 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ResearchSection from "@/components/ResearchSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import SkillsSection from "@/components/SkillsSection";
-import AchievementsSection from "@/components/AchievementsSection";
-import ContactSection from "@/components/ContactSection";
+import { useState } from "react";
+import Taskbar from "@/components/Taskbar";
+import HomeView from "@/components/HomeView";
+import AboutView from "@/components/AboutView";
+import ResearchView from "@/components/ResearchView";
+import ProjectsView from "@/components/ProjectsView";
+import SkillsView from "@/components/SkillsView";
+import ContactView from "@/components/ContactView";
 
-const Index = () => (
-  <div className="min-h-screen">
-    <Navbar />
-    <HeroSection />
-    <AboutSection />
-    <ResearchSection />
-    <ProjectsSection />
-    <SkillsSection />
-    <AchievementsSection />
-    <ContactSection />
-  </div>
-);
+const views: Record<string, React.FC> = {
+  home: HomeView,
+  about: AboutView,
+  research: ResearchView,
+  projects: ProjectsView,
+  skills: SkillsView,
+  contact: ContactView,
+};
+
+const Index = () => {
+  const [activeTab, setActiveTab] = useState("home");
+  const ActiveView = views[activeTab] || HomeView;
+
+  return (
+    <div className="min-h-screen pb-10 pt-2">
+      <ActiveView />
+      <Taskbar activeTab={activeTab} onTabChange={setActiveTab} />
+    </div>
+  );
+};
 
 export default Index;

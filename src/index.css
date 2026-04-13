@@ -2,52 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
-    --background: 220 20% 4%;
-    --foreground: 210 20% 90%;
+    --background: 0 0% 75%;
+    --foreground: 0 0% 0%;
 
-    --card: 220 18% 8%;
-    --card-foreground: 210 20% 90%;
+    --card: 0 0% 83%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 220 18% 8%;
-    --popover-foreground: 210 20% 90%;
+    --popover: 0 0% 83%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 185 100% 50%;
-    --primary-foreground: 220 20% 4%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 16% 14%;
-    --secondary-foreground: 210 20% 90%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 220 14% 12%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 0 0% 70%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 185 100% 50%;
-    --accent-foreground: 220 20% 4%;
+    --accent: 220 60% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 16% 16%;
-    --input: 220 16% 16%;
-    --ring: 185 100% 50%;
+    --border: 0 0% 55%;
+    --input: 0 0% 55%;
+    --ring: 220 60% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0px;
 
-    --cyber-glow: 185 100% 50%;
-    --cyber-green: 150 100% 50%;
-    --cyber-dim: 185 60% 25%;
+    /* Retro OS tokens */
+    --win-titlebar: 220 60% 45%;
+    --win-titlebar-text: 0 0% 100%;
+    --win-bg: 0 0% 100%;
+    --win-border-light: 0 0% 95%;
+    --win-border-dark: 0 0% 40%;
+    --win-border-darker: 0 0% 20%;
+    --win-menubar: 0 0% 83%;
+    --win-button: 0 0% 83%;
+    --win-highlight: 220 60% 45%;
+    --win-scrollbar: 0 0% 75%;
+    --desktop: 30 15% 88%;
 
-    --sidebar-background: 220 18% 6%;
-    --sidebar-foreground: 210 20% 90%;
-    --sidebar-primary: 185 100% 50%;
-    --sidebar-primary-foreground: 220 20% 4%;
-    --sidebar-accent: 220 16% 14%;
-    --sidebar-accent-foreground: 210 20% 90%;
-    --sidebar-border: 220 16% 16%;
-    --sidebar-ring: 185 100% 50%;
+    --sidebar-background: 0 0% 83%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 220 60% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 55%;
+    --sidebar-ring: 220 60% 45%;
   }
 }
 
@@ -57,80 +66,48 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Inter', sans-serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'JetBrains Mono', monospace;
+    @apply text-foreground;
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: hsl(var(--desktop));
+    cursor: default;
   }
 
   ::selection {
-    background: hsl(185 100% 50% / 0.3);
-    color: hsl(210 20% 98%);
-  }
-
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: hsl(220 20% 4%);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: hsl(185 100% 50% / 0.3);
-    border-radius: 3px;
+    background: hsl(var(--win-highlight));
+    color: hsl(0 0% 100%);
   }
 }
 
 @layer utilities {
-  .text-gradient-cyber {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--cyber-glow)), hsl(var(--cyber-green)));
-  }
-
-  .glow-cyber {
-    box-shadow: 0 0 20px hsl(var(--cyber-glow) / 0.15), 0 0 60px hsl(var(--cyber-glow) / 0.05);
-  }
-
-  .glow-text {
-    text-shadow: 0 0 20px hsl(var(--cyber-glow) / 0.5);
-  }
-
-  .border-glow {
-    border-color: hsl(var(--cyber-glow) / 0.2);
+  .font-pixel {
+    font-family: 'VT323', monospace;
   }
 
   .font-mono-brand {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
   }
 
-  .animate-fade-up {
-    animation: fadeUp 0.8s ease-out forwards;
-    opacity: 0;
+  .win-border {
+    border: 2px solid;
+    border-color: hsl(var(--win-border-light)) hsl(var(--win-border-dark)) hsl(var(--win-border-dark)) hsl(var(--win-border-light));
   }
 
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-    opacity: 0;
+  .win-border-inset {
+    border: 2px solid;
+    border-color: hsl(var(--win-border-dark)) hsl(var(--win-border-light)) hsl(var(--win-border-light)) hsl(var(--win-border-dark));
   }
-}
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+  .win-button {
+    background: hsl(var(--win-button));
+    border: 2px solid;
+    border-color: hsl(var(--win-border-light)) hsl(var(--win-border-darker)) hsl(var(--win-border-darker)) hsl(var(--win-border-light));
+    padding: 2px 8px;
+    font-size: 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    cursor: pointer;
+  }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
-}
-
-@keyframes grid-scroll {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(40px); }
+  .win-button:active {
+    border-color: hsl(var(--win-border-darker)) hsl(var(--win-border-light)) hsl(var(--win-border-light)) hsl(var(--win-border-darker));
+  }
 }
