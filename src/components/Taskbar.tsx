@@ -25,7 +25,7 @@ const Taskbar = ({ activeTab, onTabChange }: TaskbarProps) => {
           onClick={() => setStartOpen(!startOpen)}
           className="win-button font-bold text-[11px] px-3 py-1 flex items-center gap-1"
         >
-          <span className="text-sm">⊞</span> Start
+          Start
         </button>
 
         <div className="h-5 w-px bg-border mx-1" />
