@@ -9,10 +9,10 @@ const skillGroups = [
 ];
 
 const achievements = [
-  { title: "Vice Chairperson — IEEE Signal Processing Society", desc: "organising seminars, workshops & technical sessions on signal processing, applied mathematics and their intersections with cryptography." },
-  { title: "1st Place — College Ideathon", desc: "an IoT encryption system for smart home devices using camera-based entropy generation and thermal noise." },
-  { title: "Independent Research", desc: "self-studied quantum measurement, BB84 & B92 QKD protocols, and quantum information theory — bridging cryptography and quantum computing." },
-  { title: "CTF Competitions", desc: "active on PicoCTF and OverTheWire — web exploitation, binary exploitation, and cryptography." },
+  { title: "Vice Chairperson; IEEE Signal Processing Society", desc: "organising seminars, workshops & technical sessions on signal processing, applied mathematics and their intersections with cryptography." },
+  { title: "1st Place: 2x Ideathon winner, desc: "an IoT encryption system for smart home devices using camera-based entropy generation and thermal noise." },
+  { title: "Independent Research", desc: "self-studied quantum physics, BB84 & B92 QKD protocols, and quantum information theory, bridging cryptography and quantum computing." },
+  { title: "CTF Competitions", desc: "active on PicoCTF and OverTheWire; web exploitation, binary exploitation, and cryptography." },
 ];
 
 const SkillsView = () => {
