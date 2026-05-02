@@ -34,26 +34,26 @@ const HomeView = () => {
 
             <p className="font-serif text-sm md:text-base leading-relaxed text-[hsl(var(--foreground))] max-w-xl mx-auto mb-7">
               I build cryptographic tools, explore quantum computing, and chase the
-              <span className="font-script text-xl text-[hsl(var(--accent))]"> elegant </span>
+              {/* <span className="font-script text-xl text-[hsl(var(--accent))]"> elegant </span> */}
               mathematics behind secure systems. Currently a BTech student at
               <span className="italic"> Madhuben &amp; Bhanubhai Patel Institute of Technology</span>.
             </p>
 
             <div className="flex flex-wrap gap-2 justify-center">
               <a href="https://github.com/zeefromzee" target="_blank" rel="noopener noreferrer" className="win-button flex items-center gap-1.5 text-xs">
-                <Github size={13} /> github
+                <Github size={13} /> Github
               </a>
               <a href="https://www.linkedin.com/in/zeel-gajjar-0235b13a9" target="_blank" rel="noopener noreferrer" className="win-button flex items-center gap-1.5 text-xs">
-                <Linkedin size={13} /> linkedin
+                <Linkedin size={13} /> Linkedin
               </a>
               <a href="mailto:zeelg322@gmail.com" className="win-button flex items-center gap-1.5 text-xs">
-                <Mail size={13} /> email
+                <Mail size={13} /> Email
               </a>
               <a href="https://zeel-portfolio-z33.vercel.app/" target="_blank" rel="noopener noreferrer" className="win-button flex items-center gap-1.5 text-xs">
-                <Globe size={13} /> portfolio
+                <Globe size={13} /> Portfolio
               </a>
               <a href="https://portfolio-zeel-y1.vercel.app/RESUME.pdf" target="_blank" rel="noopener noreferrer" className="win-button flex items-center gap-1.5 text-xs">
-                <FileText size={13} /> resume
+                <FileText size={13} /> Resume
               </a>
             </div>
           </div>
@@ -63,7 +63,7 @@ const HomeView = () => {
               { label: "location", value: "India" },
               { label: "status", value: "BTech student" },
               { label: "field", value: "cybersecurity" },
-              { label: "currently", value: "researching RNGs" },
+              { label: "currently", value: "Studying quantum cryptography" },
             ].map((c) => (
               <div key={c.label} className="bg-white/80 rounded-2xl px-3 py-3 text-center border border-dashed border-[hsl(var(--border))]">
                 <p className="font-hand text-xs text-[hsl(var(--accent))] mb-0.5">{c.label}</p>
