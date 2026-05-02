@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { Heart } from "lucide-react";
+import { Menu } from "lucide-react";
 
 const navTabs = [
-  { id: "home", label: "home", icon: "✿" },
-  { id: "about", label: "about", icon: "♡" },
-  { id: "research", label: "research", icon: "✦" },
-  { id: "projects", label: "projects", icon: "❀" },
-  { id: "skills", label: "skills", icon: "✿" },
-  { id: "contact", label: "contact", icon: "✉" },
+  { id: "home", label: "home" },
+  { id: "about", label: "about" },
+  { id: "research", label: "research" },
+  { id: "projects", label: "projects" },
+  { id: "skills", label: "skills" },
+  { id: "contact", label: "contact" },
 ];
 
 interface TaskbarProps {
@@ -20,29 +20,30 @@ const Taskbar = ({ activeTab, onTabChange }: TaskbarProps) => {
 
   return (
     <>
-      {/* floating pill nav */}
       <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 win-border bg-[hsl(var(--cream))] flex items-center gap-1 px-2 py-1.5 backdrop-blur-sm">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="win-button flex items-center gap-1 text-xs md:hidden"
           aria-label="menu"
         >
-          <Heart size={11} fill="currentColor" /> menu
+          <Menu size={12} /> menu
         </button>
 
         <div className="hidden md:flex items-center gap-1">
-          {navTabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => { onTabChange(tab.id); setMenuOpen(false); }}
-              className={`text-xs px-3 py-1.5 rounded-full font-serif italic transition-all ${
-                activeTab === tab.id
-                  ? "bg-[hsl(var(--accent))] text-white shadow-md"
-                  : "hover:bg-white text-[hsl(var(--pink-deep))]"
-              }`}
-            >
-              <span className="mr-1">{tab.icon}</span>{tab.label}
-            </button>
+          {navTabs.map((tab, i) => (
+            <div key={tab.id} className="flex items-center">
+              {i > 0 && <span className="text-[hsl(var(--border))] mx-0.5">·</span>}
+              <button
+                onClick={() => { onTabChange(tab.id); setMenuOpen(false); }}
+                className={`text-xs px-3 py-1.5 rounded-full font-serif italic transition-all ${
+                  activeTab === tab.id
+                    ? "bg-[hsl(var(--accent))] text-white shadow-md"
+                    : "hover:bg-white text-[hsl(var(--pink-deep))]"
+                }`}
+              >
+                {tab.label}
+              </button>
+            </div>
           ))}
         </div>
 
@@ -53,10 +54,9 @@ const Taskbar = ({ activeTab, onTabChange }: TaskbarProps) => {
         </div>
       </div>
 
-      {/* mobile menu */}
       {menuOpen && (
         <div className="fixed bottom-20 left-4 right-4 z-50 win-border bg-[hsl(var(--cream))] p-3 md:hidden">
-          <p className="font-script text-2xl text-[hsl(var(--pink-deep))] text-center mb-2">menu ♡</p>
+          <p className="font-script text-2xl text-[hsl(var(--pink-deep))] text-center mb-2">menu</p>
           <div className="grid grid-cols-2 gap-2">
             {navTabs.map((tab) => (
               <button
@@ -68,7 +68,7 @@ const Taskbar = ({ activeTab, onTabChange }: TaskbarProps) => {
                     : "bg-white text-[hsl(var(--pink-deep))]"
                 }`}
               >
-                <span className="mr-1">{tab.icon}</span>{tab.label}
+                {tab.label}
               </button>
             ))}
           </div>

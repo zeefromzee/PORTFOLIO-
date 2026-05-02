@@ -8,24 +8,24 @@ import SkillsView from "@/components/SkillsView";
 import ContactView from "@/components/ContactView";
 
 const views: Record<string, React.FC> = {
-  home: HomeView,
-  about: AboutView,
-  research: ResearchView,
-  projects: ProjectsView,
-  skills: SkillsView,
-  contact: ContactView,
+ home: HomeView,
+ about: AboutView,
+ research: ResearchView,
+ projects: ProjectsView,
+ skills: SkillsView,
+ contact: ContactView,
 };
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState("home");
-  const ActiveView = views[activeTab] || HomeView;
+ const [activeTab, setActiveTab] = useState("home");
+ const ActiveView = views[activeTab] || HomeView;
 
-  return (
-    <div className="min-h-screen pb-24 pt-4">
-      <ActiveView />
-      <Taskbar activeTab={activeTab} onTabChange={setActiveTab} />
-    </div>
-  );
+ return (
+ <div className="min-h-screen pb-24 pt-4">
+ <ActiveView />
+ <Taskbar activeTab={activeTab} onTabChange={setActiveTab} />
+ </div>
+ );
 };
 
 export default Index;
