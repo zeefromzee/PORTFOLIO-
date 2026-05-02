@@ -52,7 +52,7 @@ const HomeView = () => {
               <a href="https://zeel-portfolio-z33.vercel.app/" target="_blank" rel="noopener noreferrer" className="win-button flex items-center gap-1.5 text-xs">
                 <Globe size={13} /> Portfolio
               </a>
-              <a href="https://portfolio-zeel-y1.vercel.app/ZEEL_GAJJAR_Resume.pdf" target="_blank" rel="noopener noreferrer" className="win-button flex items-center gap-1.5 text-xs">
+              <a href="ZEEL_GAJJAR_Resume.pdf" target="_blank" rel="noopener noreferrer" className="win-button flex items-center gap-1.5 text-xs">
                 <FileText size={13} /> Resume
               </a>
             </div>
