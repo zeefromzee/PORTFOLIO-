@@ -7,29 +7,35 @@ interface WindowProps {
   menuItems?: string[];
   statusBar?: string;
   maximized?: boolean;
+  ribbon?: string;
 }
 
-const Window = ({ title, children, className = "", menuItems, statusBar, maximized }: WindowProps) => {
+const Window = ({ title, children, className = "", menuItems, statusBar, ribbon }: WindowProps) => {
   return (
-    <div className={`win-border bg-card flex flex-col ${maximized ? "w-full" : ""} ${className}`}>
+    <div className={`win-border bg-card flex flex-col overflow-hidden ${className}`}>
       {/* Title bar */}
-      <div className="bg-win-titlebar px-2 py-1 flex items-center justify-between select-none shrink-0">
-        <span className="text-win-titlebar-text text-xs font-bold tracking-wide uppercase truncate">
-          {title}
+      <div className="bg-gradient-to-r from-[hsl(345_70%_82%)] via-[hsl(345_75%_88%)] to-[hsl(345_70%_82%)] px-4 py-2 flex items-center justify-between select-none shrink-0 border-b border-[hsl(var(--border))] relative">
+        <span className="text-[hsl(var(--pink-deep))] text-xs font-serif italic tracking-wide truncate">
+          ✿ {title}
         </span>
-        <div className="flex gap-0.5 shrink-0">
-          <button className="win-button text-[10px] leading-none w-5 h-4 flex items-center justify-center p-0">_</button>
-          <button className="win-button text-[10px] leading-none w-5 h-4 flex items-center justify-center p-0">□</button>
-          <button className="win-button text-[10px] leading-none w-5 h-4 flex items-center justify-center p-0">×</button>
+        <div className="flex gap-1.5 shrink-0">
+          <span className="w-2.5 h-2.5 rounded-full bg-[hsl(345_60%_75%)]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-[hsl(15_60%_80%)]"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-[hsl(35_70%_85%)]"></span>
         </div>
       </div>
 
-      {/* Menu bar */}
+      {/* Optional menu / ribbon caption */}
+      {ribbon && (
+        <div className="bg-[hsl(var(--cream))] px-4 py-1 text-[10px] font-hand text-[hsl(var(--pink-deep))] border-b border-dashed border-[hsl(var(--border))] text-center">
+          {ribbon}
+        </div>
+      )}
       {menuItems && (
-        <div className="bg-win-menubar border-b border-border px-1 py-0.5 flex gap-4 shrink-0">
+        <div className="bg-[hsl(var(--win-menubar))] border-b border-dashed border-[hsl(var(--border))] px-3 py-1 flex gap-3 shrink-0">
           {menuItems.map((item) => (
-            <span key={item} className="text-[11px] text-foreground hover:bg-win-highlight hover:text-win-titlebar-text px-1 cursor-pointer">
-              <span className="underline">{item[0]}</span>{item.slice(1)}
+            <span key={item} className="text-[11px] italic font-serif text-[hsl(var(--pink-deep))] hover:underline cursor-pointer">
+              {item}
             </span>
           ))}
         </div>
@@ -42,8 +48,8 @@ const Window = ({ title, children, className = "", menuItems, statusBar, maximiz
 
       {/* Status bar */}
       {statusBar && (
-        <div className="win-border-inset bg-card px-2 py-0.5 shrink-0">
-          <span className="text-[10px] text-muted-foreground">{statusBar}</span>
+        <div className="bg-[hsl(var(--cream))] px-3 py-1 shrink-0 border-t border-dashed border-[hsl(var(--border))]">
+          <span className="text-[10px] font-hand text-[hsl(var(--pink-deep))]">♡ {statusBar}</span>
         </div>
       )}
     </div>
