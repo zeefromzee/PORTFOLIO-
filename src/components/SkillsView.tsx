@@ -61,7 +61,7 @@ const SkillsView = () => {
           <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {achievements.map((a, i) => (
               <div key={i} className="bg-[hsl(var(--cream))] rounded-3xl p-5 border border-dashed border-[hsl(var(--border))] relative">
-                <span className="absolute -top-3 -left-2 text-2xl">🎀</span>
+                <span className="absolute -top-3 -left-2 text-2xl">✿</span>
                 <p className="font-serif font-semibold text-[hsl(var(--pink-deep))] text-sm mb-1.5">{a.title}</p>
                 <p className="font-serif text-[13px] leading-relaxed text-[hsl(var(--foreground))]">{a.desc}</p>
               </div>

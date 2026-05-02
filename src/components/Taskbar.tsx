@@ -6,7 +6,7 @@ const navTabs = [
   { id: "about", label: "about", icon: "♡" },
   { id: "research", label: "research", icon: "✦" },
   { id: "projects", label: "projects", icon: "❀" },
-  { id: "skills", label: "skills", icon: "🎀" },
+  { id: "skills", label: "skills", icon: "✿" },
   { id: "contact", label: "contact", icon: "✉" },
 ];
 

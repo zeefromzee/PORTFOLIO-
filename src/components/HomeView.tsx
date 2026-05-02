@@ -12,7 +12,7 @@ const HomeView = () => {
       >
         <div className="stripes-bg p-6 md:p-10 relative">
           {/* decorative bows */}
-          <div className="absolute top-3 left-4 text-3xl rotate-[-15deg] animate-float">🎀</div>
+          <div className="absolute top-3 left-4 text-3xl rotate-[-15deg] animate-float">✿</div>
           <div className="absolute top-6 right-6 text-2xl animate-float" style={{ animationDelay: "1s" }}>🌸</div>
           <div className="absolute bottom-6 right-10 text-xl animate-float" style={{ animationDelay: "2s" }}>♡</div>
 
