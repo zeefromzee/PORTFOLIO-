@@ -2,61 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Parisienne&family=Quicksand:wght@300;400;500;600&family=Caveat:wght@400;600&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 75%;
-    --foreground: 0 0% 0%;
+    --background: 350 60% 96%;
+    --foreground: 345 40% 25%;
 
-    --card: 0 0% 83%;
-    --card-foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 345 40% 25%;
 
-    --popover: 0 0% 83%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 345 40% 25%;
 
-    --primary: 0 0% 0%;
+    --primary: 345 65% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 90%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 345 70% 92%;
+    --secondary-foreground: 345 40% 30%;
 
-    --muted: 0 0% 70%;
-    --muted-foreground: 0 0% 35%;
+    --muted: 345 40% 94%;
+    --muted-foreground: 345 20% 50%;
 
-    --accent: 220 60% 45%;
+    --accent: 340 70% 70%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 65%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 55%;
-    --input: 0 0% 55%;
-    --ring: 220 60% 45%;
+    --border: 345 50% 85%;
+    --input: 345 50% 85%;
+    --ring: 345 65% 60%;
 
-    --radius: 0px;
+    --radius: 1rem;
 
-    /* Retro OS tokens */
-    --win-titlebar: 220 60% 45%;
+    /* Coquette tokens */
+    --win-titlebar: 345 65% 75%;
     --win-titlebar-text: 0 0% 100%;
-    --win-bg: 0 0% 100%;
-    --win-border-light: 0 0% 95%;
-    --win-border-dark: 0 0% 40%;
-    --win-border-darker: 0 0% 20%;
-    --win-menubar: 0 0% 83%;
-    --win-button: 0 0% 83%;
-    --win-highlight: 220 60% 45%;
-    --win-scrollbar: 0 0% 75%;
-    --desktop: 30 15% 88%;
+    --win-bg: 350 80% 98%;
+    --win-border-light: 0 0% 100%;
+    --win-border-dark: 345 40% 80%;
+    --win-border-darker: 345 35% 70%;
+    --win-menubar: 350 60% 95%;
+    --win-button: 345 70% 92%;
+    --win-highlight: 345 65% 70%;
+    --win-scrollbar: 345 40% 90%;
+    --desktop: 25 50% 95%;
 
-    --sidebar-background: 0 0% 83%;
-    --sidebar-foreground: 0 0% 0%;
-    --sidebar-primary: 220 60% 45%;
+    --pink-deep: 340 55% 50%;
+    --pink-soft: 345 75% 88%;
+    --cream: 35 60% 96%;
+    --rose-gold: 15 50% 70%;
+
+    --sidebar-background: 350 70% 96%;
+    --sidebar-foreground: 345 40% 25%;
+    --sidebar-primary: 345 65% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 90%;
-    --sidebar-accent-foreground: 0 0% 0%;
-    --sidebar-border: 0 0% 55%;
-    --sidebar-ring: 220 60% 45%;
+    --sidebar-accent: 345 70% 92%;
+    --sidebar-accent-foreground: 345 40% 25%;
+    --sidebar-border: 345 50% 85%;
+    --sidebar-ring: 345 65% 60%;
   }
 }
 
@@ -67,9 +72,14 @@
 
   body {
     @apply text-foreground;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Quicksand', sans-serif;
     background-color: hsl(var(--desktop));
+    background-image:
+      repeating-linear-gradient(90deg, hsl(var(--pink-soft) / 0.4) 0px, hsl(var(--pink-soft) / 0.4) 22px, transparent 22px, transparent 44px),
+      radial-gradient(circle at 10% 10%, hsl(345 80% 92%) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, hsl(25 70% 94%) 0%, transparent 40%);
     cursor: default;
+    min-height: 100vh;
   }
 
   ::selection {
@@ -79,35 +89,101 @@
 }
 
 @layer utilities {
+  .font-script {
+    font-family: 'Parisienne', cursive;
+  }
+
+  .font-serif-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-hand {
+    font-family: 'Caveat', cursive;
+  }
+
   .font-pixel {
-    font-family: 'VT323', monospace;
+    font-family: 'Parisienne', cursive;
   }
 
   .font-mono-brand {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Quicksand', sans-serif;
   }
 
   .win-border {
-    border: 2px solid;
-    border-color: hsl(var(--win-border-light)) hsl(var(--win-border-dark)) hsl(var(--win-border-dark)) hsl(var(--win-border-light));
+    border: 1px solid hsl(var(--border));
+    border-radius: 1rem;
+    box-shadow:
+      0 1px 0 hsl(0 0% 100%) inset,
+      0 8px 24px -8px hsl(345 60% 60% / 0.25),
+      0 2px 6px hsl(345 60% 60% / 0.1);
   }
 
   .win-border-inset {
-    border: 2px solid;
-    border-color: hsl(var(--win-border-dark)) hsl(var(--win-border-light)) hsl(var(--win-border-light)) hsl(var(--win-border-dark));
+    border: 1px dashed hsl(var(--border));
+    border-radius: 0.75rem;
+    background: hsl(var(--cream));
   }
 
   .win-button {
-    background: hsl(var(--win-button));
-    border: 2px solid;
-    border-color: hsl(var(--win-border-light)) hsl(var(--win-border-darker)) hsl(var(--win-border-darker)) hsl(var(--win-border-light));
-    padding: 2px 8px;
+    background: linear-gradient(180deg, hsl(0 0% 100%), hsl(var(--win-button)));
+    border: 1px solid hsl(var(--border));
+    border-radius: 9999px;
+    padding: 4px 14px;
     font-size: 12px;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    color: hsl(var(--foreground));
     cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px hsl(345 60% 60% / 0.15);
+  }
+
+  .win-button:hover {
+    background: linear-gradient(180deg, hsl(var(--win-button)), hsl(345 70% 88%));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px hsl(345 60% 60% / 0.2);
   }
 
   .win-button:active {
-    border-color: hsl(var(--win-border-darker)) hsl(var(--win-border-light)) hsl(var(--win-border-light)) hsl(var(--win-border-darker));
+    transform: translateY(0);
   }
+
+  .scallop-border {
+    --s: 14px;
+    -webkit-mask:
+      radial-gradient(var(--s) at 50% calc(100% - var(--s)), #000 98%, #0000) 50% / calc(2 * var(--s)) 100%;
+  }
+
+  .ribbon-bg {
+    background-image:
+      linear-gradient(180deg, hsl(350 70% 97%), hsl(345 75% 94%));
+  }
+
+  .stripes-bg {
+    background-image: repeating-linear-gradient(
+      90deg,
+      hsl(345 75% 94%) 0px,
+      hsl(345 75% 94%) 24px,
+      hsl(350 80% 98%) 24px,
+      hsl(350 80% 98%) 48px
+    );
+  }
+
+  .doodle-frame {
+    position: relative;
+  }
+  .doodle-frame::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border: 2px dashed hsl(var(--accent) / 0.5);
+    border-radius: 1.25rem;
+    pointer-events: none;
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+  }
+  .animate-float { animation: float-slow 5s ease-in-out infinite; }
 }
