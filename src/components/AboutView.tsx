@@ -18,11 +18,10 @@ const AboutView = () => {
               <p>
                 <span className="font-script text-2xl text-[hsl(var(--accent))]">I'm</span> a cybersecurity
                 student with a quiet obsession for the mathematics tucked beneath cryptographic
-                systems. My work moves between <em>cryptography</em>, <em>quantum computing</em>,
-                and <em>algebraic topology</em> — places where abstract beauty meets very real security.
+                systems. My work moves between <em>cryptography</em> and <em>quantum computing</em>
               </p>
               <p>
-                I've self-studied quantum measurement and QKD protocols (BB84, B92) just to sit
+                I've self-studied quantum physics , scalar field theory and QKD protocols (BB84, B92) just to sit
                 closer to the seam between physics and cipher. I love making these ideas feel
                 less like cathedrals and more like <span className="italic">letters you can read</span>.
               </p>
@@ -41,9 +40,9 @@ const AboutView = () => {
               </div>
               <div className="bg-white rounded-2xl p-4 border border-dashed border-[hsl(var(--border))]">
                 <p className="font-hand text-[hsl(var(--accent))] text-sm mb-1 italic">— focus areas —</p>
-                <p className="font-serif italic text-sm">cryptography · quantum computing · topology</p>
+                <p className="font-serif italic text-sm">cryptography · quantum computing · field theory</p>
                 <p className="font-hand text-[hsl(var(--accent))] text-sm mt-3 mb-1 italic">— interests —</p>
-                <p className="font-serif italic text-sm">CTFs · research · open source · pretty math</p>
+                <p className="font-serif italic text-sm">CTFs · research · Quantum physics</p>
               </div>
             </div>
 
