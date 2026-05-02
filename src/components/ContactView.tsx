@@ -11,7 +11,7 @@ const ContactView = () => {
         className="max-w-3xl mx-auto"
       >
         <div className="stripes-bg p-6 md:p-10 relative">
-          <div className="absolute top-3 right-6 text-3xl">🎀</div>
+          <div className="absolute top-3 right-6 text-3xl">✿</div>
 
           <div className="bg-[hsl(var(--cream))] rounded-3xl p-6 md:p-10 shadow-md border border-dashed border-[hsl(var(--border))] relative">
             <div className="text-center mb-6">

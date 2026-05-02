@@ -10,7 +10,7 @@ const AboutView = () => {
         className="max-w-4xl mx-auto"
       >
         <div className="ribbon-bg p-6 md:p-10 relative">
-          <div className="absolute top-4 left-6 text-3xl rotate-[-12deg]">🎀</div>
+          <div className="absolute top-4 left-6 text-3xl rotate-[-12deg]">✿</div>
           <div className="absolute bottom-4 right-6 text-2xl">🦢</div>
 
           <div className="bg-[hsl(var(--cream))] rounded-3xl p-6 md:p-10 shadow-md max-w-2xl mx-auto border border-dashed border-[hsl(var(--border))]">
