@@ -21,7 +21,7 @@ const Index = () => {
   const ActiveView = views[activeTab] || HomeView;
 
   return (
-    <div className="min-h-screen pb-10 pt-2">
+    <div className="min-h-screen pb-24 pt-4">
       <ActiveView />
       <Taskbar activeTab={activeTab} onTabChange={setActiveTab} />
     </div>
