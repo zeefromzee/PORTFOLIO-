@@ -4,13 +4,13 @@ const papers = [
   {
     venue: "DAU Silver Jubilee Seminar (ETSIF)",
     title: "Decoherence Effects in Variational Quantum Simulation of φ⁴ Scalar Field Theory on NISQ Hardware",
-    description: "How realistic noise channels influence variational quantum simulations of interacting quantum field theories — a discretized φ⁴ scalar field model evaluated under depolarizing, amplitude damping, and phase damping noise.",
+    description: "How realistic noise channels influence variational quantum simulations of interacting quantum field theories; a discretized φ⁴ scalar field model evaluated under depolarizing, amplitude damping, and phase damping noise.",
     tags: ["VQE", "NISQ", "QFT", "Decoherence"],
   },
   {
     venue: "PDEU · Indo Quantum Summit 2026",
     title: "Quantum-Inspired Random Number Generator",
-    description: "A quantum-inspired RNG that braids high-entropy webcam photon noise, geometric overlays, and timing jitter together with OS-level randomness — debiased with Von Neumann and whitened with hashes.",
+    description: "A quantum-inspired RNG that braids high-entropy webcam photon noise, geometric overlays, and timing jitter together with OS-level randomness; debiased with Von Neumann and whitened with hashes.",
     tags: ["RNG", "Visual Entropy", "NIST SP 800-22", "Cryptography"],
     link: "https://github.com/zeefromzee/Quantum-KeyGen",
   },
