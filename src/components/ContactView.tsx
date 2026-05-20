@@ -11,7 +11,7 @@ const ContactView = () => {
   return (
     <div className="container-prose py-24">
       <div className="mb-12">
-        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">05 — Contact</p>
+        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">05 / Contact</p>
         <h2 className="font-serif-display text-4xl md:text-6xl font-medium tracking-tight max-w-3xl">
           Let's talk cryptography, quantum, or anything in between.
         </h2>
@@ -20,8 +20,8 @@ const ContactView = () => {
       <div className="grid md:grid-cols-2 gap-10">
         <p className="text-lg text-foreground/80 leading-relaxed">
           I'm always open to research collaborations, conversations about cryptography,
-          or anything quantum-shaped. If you'd like to share a paper, an idea, or simply
-          say hello — please do.
+          or anything quantum-shaped. If you would like to share a paper, an idea, or
+          simply say hello, please reach out.
         </p>
 
         <div className="space-y-px bg-border border border-border rounded-lg overflow-hidden">

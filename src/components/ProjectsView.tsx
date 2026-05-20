@@ -2,10 +2,10 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   { title: "Cryptographic Key Statistical Test Suite", description: "Full NIST SP 800-22 battery with 30+ tests for evaluating cryptographic key strength.", tags: ["Python", "NumPy", "SciPy"], link: "https://github.com/zeefromzee/key-test" },
-  { title: "Bloch Spheres — Quantum Visualiser", description: "Interactive web app for visualising quantum states on the Bloch sphere under gate operations.", tags: ["JavaScript", "Quantum"], link: "https://github.com/zeefromzee/Bloch_Spheres" },
+  { title: "Bloch Spheres, Quantum Visualiser", description: "Interactive web app for visualising quantum states on the Bloch sphere under gate operations.", tags: ["Quantum"], link: "https://github.com/zeefromzee/Bloch_Spheres" },
   { title: "EEG-FFT-Visualiser", description: "Frequency-domain EEG analysis using FFT, decomposing into canonical brainwave bands.", tags: ["Python", "Signal"], link: "https://github.com/zeefromzee/EEG-FFT-Visualiser" },
   { title: "Quantum-Inspired Key Generator", description: "Dual-mode key generation from webcam pixel noise, geometric overlays, and OS randomness.", tags: ["Python", "OpenCV", "HKDF"], link: "https://github.com/zeefromzee/Quantum-KeyGen" },
-  { title: "Quantum Computing Experiments", description: "Foundational quantum algorithms — Deutsch-Jozsa, quantum coin flips, random circuits.", tags: ["Python", "Qiskit"], link: "https://github.com/zeefromzee/Quantum_Computing" },
+  { title: "Quantum Computing Experiments", description: "Foundational quantum algorithms including Deutsch-Jozsa, quantum coin flips, and random circuits.", tags: ["Python", "Qiskit"], link: "https://github.com/zeefromzee/Quantum_Computing" },
   { title: "Cryptography in C / C++", description: "Low-level implementations of classical and modern cryptographic primitives.", tags: ["C", "C++"], link: "https://github.com/zeefromzee/cryptography" },
   { title: "VQE Noise Studies", description: "Noise model effects on VQE circuits under depolarizing, amplitude damping, and phase damping.", tags: ["Qiskit", "VQE"], link: "https://github.com/zeefromzee/vqe" },
 ];
@@ -14,7 +14,7 @@ const ProjectsView = () => {
   return (
     <div className="container-prose py-24">
       <div className="mb-12">
-        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">03 — Projects</p>
+        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">03 / Projects</p>
         <h2 className="font-serif-display text-4xl md:text-5xl font-medium tracking-tight">Selected work.</h2>
       </div>
 

@@ -18,8 +18,8 @@ const ResearchView = () => {
   return (
     <div className="container-prose py-24">
       <div className="mb-12">
-        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">02 — Research</p>
-        <h2 className="font-serif-display text-4xl md:text-5xl font-medium tracking-tight">Published &amp; presented work.</h2>
+        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">02 / Papers</p>
+        <h2 className="font-serif-display text-4xl md:text-5xl font-medium tracking-tight">Presented Papers.</h2>
       </div>
 
       <div className="space-y-px bg-border border border-border rounded-lg overflow-hidden">

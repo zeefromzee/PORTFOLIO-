@@ -8,22 +8,23 @@ const SectionHeader = ({ eyebrow, title }: { eyebrow: string; title: string }) =
 const AboutView = () => {
   return (
     <div className="container-prose py-24">
-      <SectionHeader eyebrow="01 — About" title="A quiet obsession with cryptographic mathematics." />
+      <SectionHeader eyebrow="01 / About" title="A quiet obsession with cryptographic mathematics." />
 
       <div className="grid md:grid-cols-3 gap-12">
         <div className="md:col-span-2 space-y-5 text-lg leading-relaxed text-foreground/85">
           <p>
-            I'm a cybersecurity student whose work moves between cryptography and quantum
-            computing — chasing the seam where physics, mathematics, and security meet.
+            I am a cybersecurity student whose work moves between cryptography and
+            quantum computing, focused on the intersection of physics, mathematics,
+            and security.
           </p>
           <p>
-            I've self-studied quantum physics, scalar field theory, and QKD protocols
-            (BB84, B92) to sit closer to that intersection. My goal is to make these
-            ideas feel less like cathedrals and more like letters you can read.
+            I have independently studied quantum physics, scalar field theory, and
+            QKD protocols (BB84, B92) to engage with this field more rigorously. My
+            goal is to make these ideas accessible without diminishing their depth.
           </p>
           <p>
-            Outside of research, I compete in CTFs on PicoCTF and OverTheWire across
-            web exploitation, binary, and cryptography categories.
+            Outside of research, I compete in CTFs on CryptoHack and OverTheWire,
+            primarily in cryptography, web exploitation, and binary exploitation.
           </p>
         </div>
 
