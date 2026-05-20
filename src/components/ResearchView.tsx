@@ -1,5 +1,3 @@
-import Window from "./Window";
-
 const papers = [
   {
     venue: "DAU Silver Jubilee Seminar (ETSIF)",
@@ -10,7 +8,7 @@ const papers = [
   {
     venue: "PDEU · Indo Quantum Summit 2026",
     title: "Quantum-Inspired Random Number Generator",
-    description: "A quantum-inspired RNG that braids high-entropy webcam photon noise, geometric overlays, and timing jitter together with OS-level randomness; debiased with Von Neumann and whitened with hashes.",
+    description: "A quantum-inspired RNG braiding high-entropy webcam photon noise, geometric overlays, and timing jitter with OS-level randomness; debiased with Von Neumann and whitened with hashes.",
     tags: ["RNG", "Visual Entropy", "NIST SP 800-22", "Cryptography"],
     link: "https://github.com/zeefromzee/Quantum-KeyGen",
   },
@@ -18,50 +16,41 @@ const papers = [
 
 const ResearchView = () => {
   return (
-    <div className="p-4 md:p-8 pb-12">
-      <Window
-        title="research · a small library"
-        ribbon={`${papers.length} little papers, written with care`}
-        statusBar="select a tag to feel something"
-        className="max-w-4xl mx-auto"
-      >
-        <div className="ribbon-bg p-6 md:p-10">
-          <div className="text-center mb-8">
-            <p className="font-hand text-[hsl(var(--accent))] italic">my notebook of ideas</p>
-            <h1 className="font-script text-5xl md:text-6xl text-[hsl(var(--pink-deep))] leading-none">research</h1>
-          </div>
+    <div className="container-prose py-24">
+      <div className="mb-12">
+        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">02 — Research</p>
+        <h2 className="font-serif-display text-4xl md:text-5xl font-medium tracking-tight">Published &amp; presented work.</h2>
+      </div>
 
-          <div className="space-y-5 max-w-3xl mx-auto">
-            {papers.map((paper, i) => (
-              <div key={i} className="bg-[hsl(var(--cream))] rounded-3xl p-6 border border-dashed border-[hsl(var(--border))] shadow-sm relative">
-                <div className="absolute -top-3 left-6 bg-[hsl(var(--accent))] text-white text-[10px] px-3 py-0.5 rounded-full font-hand italic">
-                  paper №{String(i + 1).padStart(2, "0")}
-                </div>
-                <p className="font-hand text-xs text-[hsl(var(--accent))] italic mt-1 mb-2">presented at · {paper.venue}</p>
-                <h3 className="font-serif text-lg md:text-xl font-semibold text-[hsl(var(--pink-deep))] leading-snug mb-3">
-                  {paper.title}
-                </h3>
-                <p className="font-serif text-sm leading-relaxed text-[hsl(var(--foreground))] mb-4">
-                  {paper.description}
-                </p>
-                <div className="flex flex-wrap gap-1.5 mb-2">
-                  {paper.tags.map((t) => (
-                    <span key={t} className="bg-white border border-dashed border-[hsl(var(--border))] rounded-full text-[11px] px-3 py-0.5 font-hand italic text-[hsl(var(--accent))]">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                {paper.link && (
-                  <a href={paper.link} target="_blank" rel="noopener noreferrer"
-                    className="font-hand italic text-sm text-[hsl(var(--pink-deep))] underline">
-                    view repository →
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </Window>
+      <div className="space-y-px bg-border border border-border rounded-lg overflow-hidden">
+        {papers.map((p, i) => (
+          <article key={i} className="bg-background p-8 md:p-10 hover:bg-secondary/40 transition">
+            <div className="flex items-baseline justify-between gap-4 mb-3 flex-wrap">
+              <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                Paper {String(i + 1).padStart(2, "0")} · {p.venue}
+              </p>
+            </div>
+            <h3 className="font-serif-display text-2xl md:text-3xl font-medium leading-snug mb-4">
+              {p.title}
+            </h3>
+            <p className="text-base text-foreground/80 leading-relaxed mb-5 max-w-3xl">
+              {p.description}
+            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              {p.tags.map((t) => (
+                <span key={t} className="text-xs font-mono px-2.5 py-1 border border-border rounded text-muted-foreground">
+                  {t}
+                </span>
+              ))}
+              {p.link && (
+                <a href={p.link} target="_blank" rel="noopener noreferrer" className="ml-auto text-sm font-medium text-accent hover:underline">
+                  View repository →
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
   );
 };
