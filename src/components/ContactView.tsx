@@ -1,73 +1,55 @@
-import Window from "./Window";
-import { Mail, Github, Linkedin, Globe, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, Globe, MapPin, ArrowUpRight } from "lucide-react";
+
+const links = [
+  { Icon: Mail, label: "Email", value: "zeelg322@gmail.com", href: "mailto:zeelg322@gmail.com" },
+  { Icon: Github, label: "GitHub", value: "@zeefromzee", href: "https://github.com/zeefromzee" },
+  { Icon: Linkedin, label: "LinkedIn", value: "zeel-gajjar", href: "https://www.linkedin.com/in/zeel-gajjar-0235b13a9" },
+  { Icon: Globe, label: "Portfolio", value: "zeel-portfolio-z33", href: "https://zeel-portfolio-z33.vercel.app/" },
+];
 
 const ContactView = () => {
   return (
-    <div className="p-4 md:p-8 pb-12">
-      <Window
-        title="contact · letters welcome"
-        ribbon="for collaborations, papers, or pretty math chats"
-        statusBar="i reply faster than my qubits decohere"
-        className="max-w-3xl mx-auto"
-      >
-        <div className="stripes-bg p-6 md:p-10">
-          <div className="bg-[hsl(var(--cream))] rounded-3xl p-6 md:p-10 shadow-md border border-dashed border-[hsl(var(--border))]">
-            <div className="text-center mb-6">
-              <p className="font-hand text-[hsl(var(--accent))] italic text-base">a little envelope from me to you</p>
-              <h1 className="font-script text-5xl md:text-6xl text-[hsl(var(--pink-deep))] leading-none">get in touch</h1>
-            </div>
+    <div className="container-prose py-24">
+      <div className="mb-12">
+        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">05 — Contact</p>
+        <h2 className="font-serif-display text-4xl md:text-6xl font-medium tracking-tight max-w-3xl">
+          Let's talk cryptography, quantum, or anything in between.
+        </h2>
+      </div>
 
-            <div className="bg-white rounded-2xl p-5 md:p-6 border border-dashed border-[hsl(var(--border))] mb-6 font-serif text-[15px] leading-relaxed">
-              <p className="mb-2">dear friend,</p>
-              <p className="mb-2">
-                I'm always open to <em>research collaborations</em>, conversations about
-                cryptography, or anything quantum-shaped. If you'd like to share a paper,
-                an idea, or simply say hello — please do.
-              </p>
-              <p>fondly,</p>
-              <p className="font-script text-3xl text-[hsl(var(--pink-deep))] mt-1">Zeel</p>
-            </div>
+      <div className="grid md:grid-cols-2 gap-10">
+        <p className="text-lg text-foreground/80 leading-relaxed">
+          I'm always open to research collaborations, conversations about cryptography,
+          or anything quantum-shaped. If you'd like to share a paper, an idea, or simply
+          say hello — please do.
+        </p>
 
-            <div className="grid sm:grid-cols-2 gap-3">
-              <a href="mailto:zeelg322@gmail.com" className="bg-white rounded-2xl p-3 flex items-center gap-3 border border-dashed border-[hsl(var(--border))] hover:bg-[hsl(var(--secondary))] transition">
-                <Mail size={16} className="text-[hsl(var(--accent))]" />
-                <div>
-                  <p className="font-hand text-xs text-[hsl(var(--accent))] italic">email</p>
-                  <p className="text-xs font-serif italic">zeelg322@gmail.com</p>
-                </div>
-              </a>
-              <a href="https://github.com/zeefromzee" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-3 flex items-center gap-3 border border-dashed border-[hsl(var(--border))] hover:bg-[hsl(var(--secondary))] transition">
-                <Github size={16} className="text-[hsl(var(--accent))]" />
-                <div>
-                  <p className="font-hand text-xs text-[hsl(var(--accent))] italic">github</p>
-                  <p className="text-xs font-serif italic">@zeefromzee</p>
-                </div>
-              </a>
-              <a href="https://www.linkedin.com/in/zeel-gajjar-0235b13a9" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-3 flex items-center gap-3 border border-dashed border-[hsl(var(--border))] hover:bg-[hsl(var(--secondary))] transition">
-                <Linkedin size={16} className="text-[hsl(var(--accent))]" />
-                <div>
-                  <p className="font-hand text-xs text-[hsl(var(--accent))] italic">linkedin</p>
-                  <p className="text-xs font-serif italic">zeel-gajjar</p>
-                </div>
-              </a>
-              <a href="https://zeel-portfolio-z33.vercel.app/" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-3 flex items-center gap-3 border border-dashed border-[hsl(var(--border))] hover:bg-[hsl(var(--secondary))] transition">
-                <Globe size={16} className="text-[hsl(var(--accent))]" />
-                <div>
-                  <p className="font-hand text-xs text-[hsl(var(--accent))] italic">portfolio</p>
-                  <p className="text-xs font-serif italic">zeel-portfolio-z33</p>
-                </div>
-              </a>
-              <div className="bg-white rounded-2xl p-3 flex items-center gap-3 border border-dashed border-[hsl(var(--border))] sm:col-span-2">
-                <MapPin size={16} className="text-[hsl(var(--accent))]" />
-                <div>
-                  <p className="font-hand text-xs text-[hsl(var(--accent))] italic">location</p>
-                  <p className="text-xs font-serif italic">India · BTech Student in Cybersecurity, MBIT</p>
-                </div>
+        <div className="space-y-px bg-border border border-border rounded-lg overflow-hidden">
+          {links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              target={l.href.startsWith("http") ? "_blank" : undefined}
+              rel="noopener noreferrer"
+              className="group bg-background flex items-center gap-4 p-5 hover:bg-secondary/50 transition"
+            >
+              <l.Icon size={18} className="text-muted-foreground shrink-0" />
+              <div className="flex-1">
+                <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">{l.label}</p>
+                <p className="text-base font-medium">{l.value}</p>
               </div>
+              <ArrowUpRight size={16} className="text-muted-foreground group-hover:text-foreground transition" />
+            </a>
+          ))}
+          <div className="bg-background flex items-center gap-4 p-5">
+            <MapPin size={18} className="text-muted-foreground shrink-0" />
+            <div>
+              <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">Location</p>
+              <p className="text-base font-medium">India</p>
             </div>
           </div>
         </div>
-      </Window>
+      </div>
     </div>
   );
 };

@@ -1,80 +1,51 @@
-import Window from "./Window";
-import { Code2, Shield, Library, Compass, Award } from "lucide-react";
-
 const skillGroups = [
-  { title: "languages", Icon: Code2, items: ["Python", "C", "C++", "Julia", "JavaScript", "Bash"] },
-  { title: "security tools", Icon: Shield, items: ["Burp Suite", "Wireshark", "Nmap"] },
-  { title: "frameworks & libraries", Icon: Library, items: ["OpenCV", "Pandas", "Matplotlib", "NumPy", "SciPy", "Fernet", "PyGame", "Electron.js", "SageMath"] },
-  { title: "domains", Icon: Compass, items: ["Cryptography", "Cryptanalysis", "Network Security", "Web Exploitation", "Binary Exploitation", "Statistical Testing", "Cyber Forensics", "Qiskit", "Quantum Computing", "Noise Simulation"] },
+  { title: "Languages", items: ["Python", "C", "C++", "Julia", "JavaScript", "Bash"] },
+  { title: "Security Tools", items: ["Burp Suite", "Wireshark", "Nmap"] },
+  { title: "Frameworks & Libraries", items: ["OpenCV", "Pandas", "Matplotlib", "NumPy", "SciPy", "Fernet", "PyGame", "Electron.js", "SageMath", "Qiskit"] },
+  { title: "Domains", items: ["Cryptography", "Cryptanalysis", "Network Security", "Web Exploitation", "Binary Exploitation", "Statistical Testing", "Cyber Forensics", "Quantum Computing", "Noise Simulation"] },
 ];
 
 const achievements = [
-  { title: "Vice Chairperson; IEEE Signal Processing Society", desc: "organising seminars, workshops & technical sessions on signal processing, applied mathematics and their intersections with cryptography." },
-  { title: "1st Place: 2x Ideathon winner", desc: "an IoT encryption system for smart home devices using camera-based entropy generation and thermal noise." },
-  { title: "Independent Research", desc: "self-studied quantum physics, BB84 & B92 QKD protocols, and quantum information theory, bridging cryptography and quantum computing." },
-  { title: "CTF Competitions", desc: "active on PicoCTF and OverTheWire; web exploitation, binary exploitation, and cryptography." },
+  { title: "Vice Chairperson — IEEE Signal Processing Society", desc: "Organising seminars, workshops & technical sessions on signal processing, applied mathematics, and intersections with cryptography." },
+  { title: "1st Place · 2× Ideathon Winner", desc: "IoT encryption system for smart home devices using camera-based entropy generation and thermal noise." },
+  { title: "Independent Research", desc: "Self-studied quantum physics, BB84 & B92 QKD protocols, and quantum information theory — bridging cryptography and quantum computing." },
+  { title: "CTF Competitions", desc: "Active on PicoCTF and OverTheWire — web exploitation, binary exploitation, and cryptography." },
 ];
 
 const SkillsView = () => {
   return (
-    <div className="p-4 md:p-8 pb-12 space-y-6">
-      <Window
-        title="skills · my little toolkit"
-        ribbon="tied with ribbon, sorted by feeling"
-        className="max-w-4xl mx-auto"
-      >
-        <div className="ribbon-bg p-6 md:p-10">
-          <div className="text-center mb-8">
-            <p className="font-hand text-[hsl(var(--accent))] italic">things i love working with</p>
-            <h1 className="font-script text-5xl md:text-6xl text-[hsl(var(--pink-deep))] leading-none">skills</h1>
-          </div>
+    <div className="container-prose py-24">
+      <div className="mb-12">
+        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">04 — Skills</p>
+        <h2 className="font-serif-display text-4xl md:text-5xl font-medium tracking-tight">Toolkit &amp; achievements.</h2>
+      </div>
 
-          <div className="space-y-5 max-w-3xl mx-auto">
-            {skillGroups.map((group) => (
-              <div key={group.title} className="bg-[hsl(var(--cream))] rounded-3xl p-5 border border-dashed border-[hsl(var(--border))]">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="w-9 h-9 rounded-full bg-white border border-dashed border-[hsl(var(--border))] flex items-center justify-center">
-                    <group.Icon size={16} className="text-[hsl(var(--accent))]" strokeWidth={1.5} />
-                  </span>
-                  <p className="font-script text-2xl text-[hsl(var(--pink-deep))]">{group.title}</p>
-                </div>
-                <div className="flex flex-wrap gap-2 pl-12">
-                  {group.items.map((item) => (
-                    <span key={item} className="bg-white rounded-full px-3 py-1 text-xs font-serif italic border border-dashed border-[hsl(var(--border))] text-[hsl(var(--foreground))]">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Window>
-
-      <Window
-        title="achievements · pressed flowers"
-        ribbon={`${achievements.length} small joys`}
-        className="max-w-4xl mx-auto"
-      >
-        <div className="stripes-bg p-6 md:p-10">
-          <div className="text-center mb-8">
-            <p className="font-hand text-[hsl(var(--accent))] italic">a little keepsake page</p>
-            <h1 className="font-script text-5xl md:text-6xl text-[hsl(var(--pink-deep))] leading-none">achievements</h1>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            {achievements.map((a, i) => (
-              <div key={i} className="bg-[hsl(var(--cream))] rounded-3xl p-5 border border-dashed border-[hsl(var(--border))] relative">
-                <span className="absolute -top-3 left-4 w-8 h-8 rounded-full bg-white border border-dashed border-[hsl(var(--border))] flex items-center justify-center">
-                  <Award size={14} className="text-[hsl(var(--accent))]" strokeWidth={1.5} />
+      <div className="grid md:grid-cols-2 gap-10 mb-20">
+        {skillGroups.map((g) => (
+          <div key={g.title}>
+            <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-4 pb-3 border-b border-border">
+              {g.title}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {g.items.map((i) => (
+                <span key={i} className="text-sm px-3 py-1.5 bg-secondary rounded-md text-foreground/85">
+                  {i}
                 </span>
-                <p className="font-serif font-semibold text-[hsl(var(--pink-deep))] text-sm mb-1.5 mt-3">{a.title}</p>
-                <p className="font-serif text-[13px] leading-relaxed text-[hsl(var(--foreground))]">{a.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </Window>
+        ))}
+      </div>
+
+      <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-6">Achievements</p>
+      <div className="space-y-px bg-border border border-border rounded-lg overflow-hidden">
+        {achievements.map((a) => (
+          <div key={a.title} className="bg-background p-6 md:p-7">
+            <h3 className="font-serif-display text-xl font-medium mb-2">{a.title}</h3>
+            <p className="text-base text-foreground/75 leading-relaxed">{a.desc}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

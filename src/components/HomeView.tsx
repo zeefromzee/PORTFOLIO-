@@ -1,82 +1,54 @@
-import Window from "./Window";
-import { Github, Mail, FileText, Linkedin, Globe } from "lucide-react";
-
-const Ornament = ({ className = "" }: { className?: string }) => (
-  <svg viewBox="0 0 60 12" className={className} fill="none" stroke="currentColor" strokeWidth="0.8">
-    <path d="M2 6 H22" />
-    <circle cx="26" cy="6" r="1.5" />
-    <circle cx="34" cy="6" r="1.5" />
-    <path d="M38 6 H58" />
-  </svg>
-);
+import { Github, Linkedin, Mail, FileText, Globe, MapPin, ArrowRight } from "lucide-react";
 
 const HomeView = () => {
   return (
-    <div className="p-4 md:p-8 pb-12 space-y-6">
-      <Window
-        title="welcome to my little corner"
-        ribbon="a soft place for cryptography and curiosity"
-        statusBar="composed with care"
-        className="max-w-5xl mx-auto"
-      >
-        <div className="stripes-bg p-6 md:p-10">
-          <div className="bg-[hsl(var(--win-bg))] rounded-[2rem] doodle-frame p-8 md:p-12 shadow-lg max-w-3xl mx-auto text-center">
-            <p className="font-hand text-2xl text-[hsl(var(--accent))] mb-1">hi there, i'm</p>
-            <h1 className="font-script text-6xl md:text-8xl text-[hsl(var(--pink-deep))] leading-none mb-3">
-              Zeel Gajjar
-            </h1>
-            <Ornament className="w-24 h-3 mx-auto text-[hsl(var(--accent))] mb-4" />
-            <p className="font-serif italic text-base md:text-lg text-[hsl(var(--foreground))] mb-6">
-              cryptography researcher · quantum computing · cybersecurity
-            </p>
+    <div className="container-prose py-20 md:py-32">
+      <div className="max-w-3xl">
+        <p className="font-mono text-sm text-accent mb-6 tracking-wide">
+          <span className="inline-block w-2 h-2 rounded-full bg-accent mr-2 align-middle" />
+          Available for research collaborations
+        </p>
+        <h1 className="font-serif-display text-5xl md:text-7xl font-medium leading-[1.05] tracking-tight mb-6">
+          Zeel Gajjar
+        </h1>
+        <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
+          Cybersecurity undergraduate exploring the mathematics behind
+          <span className="text-foreground"> cryptography</span> and
+          <span className="text-foreground"> quantum computing</span>.
+          Currently studying at Madhuben &amp; Bhanubhai Patel Institute of Technology.
+        </p>
 
-            <div className="border-t border-dashed border-[hsl(var(--border))] my-5 mx-8" />
-
-            <p className="font-serif text-sm md:text-base leading-relaxed text-[hsl(var(--foreground))] max-w-xl mx-auto mb-7">
-              I build cryptographic tools, explore quantum computing, and chase the
-              {/* <span className="font-script text-xl text-[hsl(var(--accent))]"> elegant </span> */}
-              mathematics behind secure systems. Currently a BTech student at
-              <span className="italic"> Madhuben &amp; Bhanubhai Patel Institute of Technology</span>.
-            </p>
-
-            <div className="flex flex-wrap gap-2 justify-center">
-              <a href="https://github.com/zeefromzee" target="_blank" rel="noopener noreferrer" className="win-button flex items-center gap-1.5 text-xs">
-                <Github size={13} /> Github
-              </a>
-              <a href="https://www.linkedin.com/in/zeel-gajjar-0235b13a9" target="_blank" rel="noopener noreferrer" className="win-button flex items-center gap-1.5 text-xs">
-                <Linkedin size={13} /> Linkedin
-              </a>
-              <a href="mailto:zeelg322@gmail.com" className="win-button flex items-center gap-1.5 text-xs">
-                <Mail size={13} /> Email
-              </a>
-              <a href="https://zeel-portfolio-z33.vercel.app/" target="_blank" rel="noopener noreferrer" className="win-button flex items-center gap-1.5 text-xs">
-                <Globe size={13} /> Portfolio
-              </a>
-              <a href="ZEEL_GAJJAR_Resume.pdf" target="_blank" rel="noopener noreferrer" className="win-button flex items-center gap-1.5 text-xs">
-                <FileText size={13} /> Resume
-              </a>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8 max-w-3xl mx-auto">
-            {[
-              { label: "location", value: "India" },
-              { label: "status", value: "BTech student" },
-              { label: "field", value: "cybersecurity" },
-              { label: "currently", value: "Studying quantum cryptography" },
-            ].map((c) => (
-              <div key={c.label} className="bg-white/80 rounded-2xl px-3 py-3 text-center border border-dashed border-[hsl(var(--border))]">
-                <p className="font-hand text-xs text-[hsl(var(--accent))] mb-0.5">{c.label}</p>
-                <p className="font-serif italic text-xs text-[hsl(var(--foreground))]">{c.value}</p>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-center mt-8 font-hand text-sm text-[hsl(var(--accent))] italic">
-            scroll through my little world below
-          </p>
+        <div className="flex flex-wrap gap-3 mb-12">
+          <a href="#projects" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition">
+            View Projects <ArrowRight size={16} />
+          </a>
+          <a href="/ZEEL_GAJJAR_Resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md border border-border text-sm font-medium hover:bg-secondary transition">
+            <FileText size={16} /> Resume
+          </a>
         </div>
-      </Window>
+
+        <div className="flex items-center gap-5 text-muted-foreground">
+          <a aria-label="GitHub" href="https://github.com/zeefromzee" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition"><Github size={20} /></a>
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/in/zeel-gajjar-0235b13a9" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition"><Linkedin size={20} /></a>
+          <a aria-label="Email" href="mailto:zeelg322@gmail.com" className="hover:text-foreground transition"><Mail size={20} /></a>
+          <a aria-label="Portfolio" href="https://zeel-portfolio-z33.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition"><Globe size={20} /></a>
+          <span className="text-sm flex items-center gap-1.5"><MapPin size={15} /> India</span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border mt-20 border border-border rounded-lg overflow-hidden">
+        {[
+          { k: "Focus", v: "Cryptography" },
+          { k: "Field", v: "Quantum Computing" },
+          { k: "Status", v: "BTech, 2029" },
+          { k: "Role", v: "VC, IEEE SPS" },
+        ].map((s) => (
+          <div key={s.k} className="bg-background p-5">
+            <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-2">{s.k}</p>
+            <p className="font-serif-display text-lg font-medium">{s.v}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
