@@ -14,8 +14,8 @@ const ProjectsView = () => {
   return (
     <div className="container-prose py-24">
       <div className="mb-12">
-        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">03 / Projects</p>
-        <h2 className="font-serif-display text-4xl md:text-5xl font-medium tracking-tight">Selected work.</h2>
+        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">04 / Projects</p>
+        <h2 className="font-serif-display text-4xl md:text-5xl font-medium tracking-tight italic">Selected work.</h2>
       </div>
 
       <div className="grid md:grid-cols-2 gap-5">

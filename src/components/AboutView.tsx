@@ -1,7 +1,7 @@
 const SectionHeader = ({ eyebrow, title }: { eyebrow: string; title: string }) => (
   <div className="mb-12">
     <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">{eyebrow}</p>
-    <h2 className="font-serif-display text-4xl md:text-5xl font-medium tracking-tight">{title}</h2>
+    <h2 className="font-serif-display text-4xl md:text-5xl font-medium tracking-tight italic">{title}</h2>
   </div>
 );
 
