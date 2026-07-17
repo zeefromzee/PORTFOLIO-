@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HomeView from "@/components/HomeView";
 import AboutView from "@/components/AboutView";
+import ExperienceView from "@/components/ExperienceView";
 import ResearchView from "@/components/ResearchView";
 import ProjectsView from "@/components/ProjectsView";
 import SkillsView from "@/components/SkillsView";
@@ -13,6 +14,7 @@ const Index = () => {
       <main>
         <section id="home"><HomeView /></section>
         <section id="about" className="section-divider"><AboutView /></section>
+        <section id="experience" className="section-divider"><ExperienceView /></section>
         <section id="research" className="section-divider"><ResearchView /></section>
         <section id="projects" className="section-divider"><ProjectsView /></section>
         <section id="skills" className="section-divider"><SkillsView /></section>
