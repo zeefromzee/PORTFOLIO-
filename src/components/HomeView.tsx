@@ -9,7 +9,7 @@ const HomeView = () => {
           Available for research collaborations
         </p>
         <h1 className="font-serif-display text-5xl md:text-7xl font-medium leading-[1.05] tracking-tight mb-6">
-          Zeel Gajjar
+          Zeel <span className="italic text-accent">Gajjar</span>
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8 max-w-2xl">
           Cybersecurity undergraduate exploring the mathematics behind

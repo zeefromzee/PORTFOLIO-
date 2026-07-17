@@ -11,8 +11,8 @@ const ContactView = () => {
   return (
     <div className="container-prose py-24">
       <div className="mb-12">
-        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">05 / Contact</p>
-        <h2 className="font-serif-display text-4xl md:text-6xl font-medium tracking-tight max-w-3xl">
+        <p className="font-mono text-sm text-accent uppercase tracking-wider mb-3">06 / Contact</p>
+        <h2 className="font-serif-display text-4xl md:text-6xl font-medium tracking-tight max-w-3xl italic">
           Let's talk cryptography, quantum, or anything in between.
         </h2>
       </div>
