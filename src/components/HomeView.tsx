@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, FileText, Globe, MapPin, ArrowRight } from "lucide-react";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 const HomeView = () => {
   return (
@@ -22,7 +23,7 @@ const HomeView = () => {
           <a href="#projects" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition">
             View Projects <ArrowRight size={16} />
           </a>
-          <a href="/ZEEL_GAJJAR_Resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md border border-border text-sm font-medium hover:bg-secondary transition">
+          <a href={resumeAsset.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md border border-border text-sm font-medium hover:bg-secondary transition">
             <FileText size={16} /> Resume
           </a>
         </div>
