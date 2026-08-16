@@ -4,7 +4,7 @@ const experiences = [
   {
     role: "Research Intern, QKD & RSA",
     org: "TechForGood 2026 · IEEE MIT-ADT Student Branch",
-    period: "June 2026 — Present",
+    period: "JUNE 2026 — JULY 2026",
     location: "Remote · IEEE Maharashtra Section",
     bullets: [
       "Conducting research on Quantum Key Distribution protocols and RSA cryptographic systems under IEEE Maharashtra Section.",
