@@ -2,7 +2,6 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   { title: "Cryptographic Key Statistical Test Suite", description: "Full NIST SP 800-22 battery with 30+ tests for evaluating cryptographic key strength.", tags: ["Python", "NumPy", "SciPy"], link: "https://github.com/zeefromzee/key-test" },
-  { title: "Bloch Spheres, Quantum Visualiser", description: "Interactive web app for visualising quantum states on the Bloch sphere under gate operations.", tags: ["Quantum"], link: "https://github.com/zeefromzee/Bloch_Spheres" },
   { title: "EEG-FFT-Visualiser", description: "Frequency-domain EEG analysis using FFT, decomposing into canonical brainwave bands.", tags: ["Python", "Signal"], link: "https://github.com/zeefromzee/EEG-FFT-Visualiser" },
   { title: "Quantum-Inspired Key Generator", description: "Dual-mode key generation from webcam pixel noise, geometric overlays, and OS randomness.", tags: ["Python", "OpenCV", "HKDF"], link: "https://github.com/zeefromzee/Quantum-KeyGen" },
   { title: "Quantum Computing Experiments", description: "Foundational quantum algorithms including Deutsch-Jozsa, quantum coin flips, and random circuits.", tags: ["Python", "Qiskit"], link: "https://github.com/zeefromzee/Quantum_Computing" },
